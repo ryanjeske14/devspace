@@ -1,0 +1,19 @@
+.dashboard_section {
+    text-align: center;
+    padding: 5% 6%;
+    background-color: #bbb;
+}
+
+.dashboard_form {
+    display: flex;
+    flex-direction: column;
+}
+
+.dashboard_input {
+    margin-bottom: 20px;
+}
+
+.dashboard_button {
+    margin: 10px auto;
+    width: 200px;
+}
