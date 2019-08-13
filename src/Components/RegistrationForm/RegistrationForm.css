@@ -1,0 +1,28 @@
+.RegistrationPage {
+    padding-bottom: 50px;
+}
+
+.RegistrationForm {
+    max-width: 600px;
+    margin: 15px auto;
+}
+
+.registration_button {
+    background-color: rgb(190, 44, 0);
+    border-radius: 2px;
+    border: none;
+    font-size: 20px;
+    padding: 3px 15px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    margin: 30px 20px;
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    width: 180px;
+    height: 37px;
+}
+
+.registration_button:hover {
+    background-color: #EE9300;
+}
