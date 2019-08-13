@@ -1,7 +1,10 @@
 import React from "react";
 
 const AppContext = React.createContext({
-  user: {}
+  loggedIn: false,
+  setLoggedIn: () => {},
+  user: {},
+  setUser: () => {}
 });
 
 export default AppContext;
