@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import AppContext from "../../AppContext";
+import Header from "../Header/Header";
 import LandingPage from "../LandingPage/LandingPage";
 import Dashboard from "../Dashboard/Dashboard";
 import LoginPage from "../../routes/LoginPage/LoginPage";
@@ -112,6 +113,9 @@ class App extends Component {
 
     return (
       <AppContext.Provider value={contextValue}>
+        <header>
+          <Header />
+        </header>
         <main className="App" role="main">
           <Switch>
             <Route exact path={"/"} component={LandingPage} />
