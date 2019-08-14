@@ -2,11 +2,11 @@
   height: 60px;
   display: flex;
   justify-content: space-between;
-  background-color: rgb(170, 196, 245);
+  background-color: rgba(0, 0, 0, 0.712);
 }
 
 .Header a {
-  color: #3a3a3a;
+  color: #ffffff;
   /* text-decoration: none; */
 }
 

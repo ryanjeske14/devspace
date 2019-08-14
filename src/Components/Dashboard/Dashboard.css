@@ -13,7 +13,25 @@
     margin-bottom: 20px;
 }
 
+#bio {
+    height: 140px;
+}
+
 .dashboard_button {
     margin: 10px auto;
     width: 200px;
+}
+
+.success_message {
+    margin: 10px 0;
+    font-weight: bold;
+}
+
+.projects_list {
+    list-style: none;
+    padding: 0;
+}
+
+.dashboard_project {
+    margin: 10px 0;
 }
