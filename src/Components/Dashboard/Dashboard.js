@@ -244,7 +244,10 @@ export default class Dashboard extends Component {
           successMessage: "Profile Saved Successfully!"
         })
       )
-      .catch(err => console.error(err));
+      .catch(err => {
+        console.error(err);
+        this.setState({ successMessage: err.error.message });
+      });
   };
 
   render() {
@@ -365,11 +368,6 @@ export default class Dashboard extends Component {
         </form>
         <section className="dashboard_projects">
           <h2>My Projects</h2>
-          <button className="dashboard_button">
-            <Link className="add_project_link" to={`/add-project`}>
-              Add New Project
-            </Link>
-          </button>
           <ul className="projects_list">
             {projects.map(project => (
               <li className="dashboard_project" key={project.id}>
@@ -382,6 +380,11 @@ export default class Dashboard extends Component {
               </li>
             ))}
           </ul>
+          <button className="dashboard_button">
+            <Link className="add_project_link" to={`/add-project`}>
+              Add New Project
+            </Link>
+          </button>
         </section>
       </section>
     );

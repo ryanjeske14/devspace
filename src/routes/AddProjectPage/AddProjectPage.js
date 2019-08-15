@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import AppContext from "../../AppContext";
 import ValidationError from "../../Components/ValidationError/ValidationError";
 import PortfolioApiService from "../../services/portfolio-api-service";
@@ -298,7 +299,7 @@ export default class AddProjectPage extends Component {
           />
 
           <button
-            className="form_button"
+            className="form_button button"
             type="submit"
             disabled={!this.state.formValid}
           >
@@ -309,6 +310,11 @@ export default class AddProjectPage extends Component {
           ) : (
             <></>
           )}
+          <button className="back_button button">
+            <Link className="back_link" to={`/dashboard`}>
+              Back to Dashboard
+            </Link>
+          </button>
         </form>
       </section>
     );
