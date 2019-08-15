@@ -1,0 +1,32 @@
+.add_form_header {
+    text-align: center;
+    margin-top: 60px;
+}
+
+.add_project_form {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 30px 80px;;
+}
+
+.form_input {
+    margin: 0 0 20px; 
+}
+
+.text_input {
+    padding-left: 5px;
+}
+
+.checkbox_group {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.checkbox_div {
+    margin: 5px auto;
+    flex: 50%;
+    display: flex;
+    justify-content: flex-start;
+}
+
