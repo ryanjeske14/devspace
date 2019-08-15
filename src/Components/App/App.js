@@ -4,6 +4,7 @@ import AppContext from "../../AppContext";
 import Header from "../Header/Header";
 import LandingPage from "../LandingPage/LandingPage";
 import Dashboard from "../Dashboard/Dashboard";
+import AddProjectPage from "../../routes/AddProjectPage/AddProjectPage";
 import EditProjectPage from "../../routes/EditProjectPage/EditProjectPage";
 import LoginPage from "../../routes/LoginPage/LoginPage";
 import RegistrationPage from "../../routes/RegistrationPage/RegistrationPage";
@@ -125,6 +126,7 @@ class App extends Component {
               path={"/edit-project/:project_id"}
               component={EditProjectPage}
             />
+            <PrivateRoute path={"/add-project"} component={AddProjectPage} />
             <PublicOnlyRoute path={"/login"} component={LoginPage} />
             <PublicOnlyRoute path={"/register"} component={RegistrationPage} />
             <Route component={NotFoundPage} />

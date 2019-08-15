@@ -263,6 +263,7 @@ export default class Dashboard extends Component {
         <header role="banner">
           <h1>My Dashboard</h1>
         </header>{" "}
+        <button className="dashboard_button">View My Portfolio</button>
         <form className="dashboard_form" onSubmit={this.handleSubmit}>
           <h2>About Me</h2>
           <label htmlFor="full_name">Full Name</label>
@@ -364,6 +365,11 @@ export default class Dashboard extends Component {
         </form>
         <section className="dashboard_projects">
           <h2>My Projects</h2>
+          <button className="dashboard_button">
+            <Link className="add_project_link" to={`/add-project`}>
+              Add New Project
+            </Link>
+          </button>
           <ul className="projects_list">
             {projects.map(project => (
               <li className="dashboard_project" key={project.id}>
@@ -377,7 +383,6 @@ export default class Dashboard extends Component {
             ))}
           </ul>
         </section>
-        <button className="dashboard_button">View My Portfolio</button>
       </section>
     );
   }
