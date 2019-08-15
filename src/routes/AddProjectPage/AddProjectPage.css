@@ -6,7 +6,7 @@
 .add_project_form {
     display: flex;
     flex-direction: column;
-    padding: 10px 30px 80px;;
+    padding: 10px 30px 80px;
 }
 
 .form_input {
@@ -29,4 +29,19 @@
     display: flex;
     justify-content: flex-start;
 }
+
+.success_message {
+    text-align: center;
+}
+
+.button {
+    width: 250px;
+    margin: 10px auto;
+}
+
+.back_link {
+    text-decoration: none;
+    color: black;
+}
+
 
