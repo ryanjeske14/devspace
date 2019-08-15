@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Section } from "../../components/Utils/Utils";
-import RegistrationForm from "../../components/RegistrationForm/RegistrationForm";
+import { Section } from "../../Components/Utils/Utils";
+import RegistrationForm from "../../Components/RegistrationForm/RegistrationForm";
 import AppContext from "../../AppContext";
 import TokenService from "../../services/token-service";
 

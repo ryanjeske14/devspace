@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import AppContext from "../../AppContext";
 import TokenService from "../../services/token-service";
-import ValidationError from "../../components/ValidationError/ValidationError";
+import ValidationError from "../../Components/ValidationError/ValidationError";
 import PortfolioApiService from "../../services/portfolio-api-service";
 import "./Dashboard.css";
 

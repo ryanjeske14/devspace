@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import AppContext from "../../AppContext";
-import ValidationError from "../../components/ValidationError/ValidationError";
+import ValidationError from "../../Components/ValidationError/ValidationError";
 import PortfolioApiService from "../../services/portfolio-api-service";
 import "./AddProjectPage.css";
 
