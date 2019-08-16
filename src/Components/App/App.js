@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import AppContext from "../../AppContext";
 import Header from "../Header/Header";
-import LandingPage from "../LandingPage/LandingPage";
+import LandingPage from "../../routes/LandingPage/LandingPage";
 import PortfolioPage from "../../routes/PortfolioPage/PortfolioPage";
-import Dashboard from "../Dashboard/Dashboard";
+import Dashboard from "../../routes/Dashboard/Dashboard";
 import AddProjectPage from "../../routes/AddProjectPage/AddProjectPage";
 import EditProjectPage from "../../routes/EditProjectPage/EditProjectPage";
 import LoginPage from "../../routes/LoginPage/LoginPage";
@@ -14,7 +14,7 @@ import PrivateRoute from "../Utils/PrivateRoute";
 import TokenService from "../../services/token-service";
 import AuthApiService from "../../services/auth-api-service";
 import IdleService from "../../services/idle-service";
-import NotFoundPage from "../NotFoundPage/NotFoundPage";
+import NotFoundPage from "../../routes/NotFoundPage/NotFoundPage";
 
 class App extends Component {
   state = {

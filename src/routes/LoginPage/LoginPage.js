@@ -33,8 +33,8 @@ export default class LoginPage extends Component {
         <h1>Login</h1>
         <LoginForm onLoginSuccess={this.handleLoginSuccess} />
         <h2 className="demo_header">Demo Account:</h2>
-        <p className="demo_creds">Username: demo</p>
-        <p className="demo_creds">Password: Demo123#</p>
+        <p className="demo_creds">Username: chucknorris</p>
+        <p className="demo_creds">Password: Portfolio123#</p>
       </Section>
     );
   }

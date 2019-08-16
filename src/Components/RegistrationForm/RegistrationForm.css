@@ -1,5 +1,6 @@
 .RegistrationPage {
     padding-bottom: 50px;
+    text-align: center;
 }
 
 .RegistrationForm {
@@ -25,4 +26,8 @@
 
 .registration_button:hover {
     background-color: #EE9300;
+}
+
+.password_instructions {
+    margin: 15px 0;
 }

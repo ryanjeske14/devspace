@@ -34,13 +34,19 @@ export default class RegistrationPage extends Component {
           onRegistrationSuccess={this.handleRegistrationSuccess}
         />
         <h2>Password Requirements:</h2>
-        <p>Password must be at least 8 characters long</p>
-        <p>
+        <p className="password_instructions">
+          Password must be at least 8 characters long
+        </p>
+        <p className="password_instructions">
           Password must contain at least one upper case letter, lower case
           letter, number and special character
         </p>
-        <p>Password must be less than 72 characters</p>
-        <p>Password must not start or end with empty spaces</p>
+        <p className="password_instructions">
+          Password must be less than 72 characters
+        </p>
+        <p className="password_instructions">
+          Password must not start or end with empty spaces
+        </p>
       </Section>
     );
   }
