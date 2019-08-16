@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import AppContext from "../../AppContext";
 import Header from "../Header/Header";
 import LandingPage from "../LandingPage/LandingPage";
+import PortfolioPage from "../../routes/PortfolioPage/PortfolioPage";
 import Dashboard from "../Dashboard/Dashboard";
 import AddProjectPage from "../../routes/AddProjectPage/AddProjectPage";
 import EditProjectPage from "../../routes/EditProjectPage/EditProjectPage";
@@ -115,12 +116,17 @@ class App extends Component {
 
     return (
       <AppContext.Provider value={contextValue}>
-        <header>
-          <Header />
-        </header>
+        {window.location.href.includes("/portfolio") ? (
+          <></>
+        ) : (
+          <header>
+            <Header />
+          </header>
+        )}
         <main className="App" role="main">
           <Switch>
             <Route exact path={"/"} component={LandingPage} />
+            <Route path={"/portfolio/:user_name"} component={PortfolioPage} />
             <PrivateRoute path={"/dashboard"} component={Dashboard} />
             <PrivateRoute
               path={"/edit-project/:project_id"}

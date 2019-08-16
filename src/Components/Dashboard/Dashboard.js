@@ -44,6 +44,7 @@ export default class Dashboard extends Component {
       const username = TokenService.parseAuthToken().sub;
       PortfolioApiService.getPortfolioData(username).then(user => {
         this.setState({
+          user_name: user.user_name,
           full_name: user.full_name,
           title: user.title,
           bio: user.bio,
@@ -252,6 +253,7 @@ export default class Dashboard extends Component {
 
   render() {
     const {
+      user_name,
       full_name,
       title,
       bio,
@@ -266,7 +268,11 @@ export default class Dashboard extends Component {
         <header role="banner">
           <h1>My Dashboard</h1>
         </header>{" "}
-        <button className="dashboard_button">View My Portfolio</button>
+        <button className="dashboard_button">
+          <Link target="_blank" to={`/portfolio/${user_name}`}>
+            View My Portfolio
+          </Link>
+        </button>
         <form className="dashboard_form" onSubmit={this.handleSubmit}>
           <h2>About Me</h2>
           <label htmlFor="full_name">Full Name</label>
