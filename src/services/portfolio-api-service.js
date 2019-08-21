@@ -74,7 +74,8 @@ const PortfolioApiService = {
     github_url,
     linkedin_url,
     email_address,
-    projects
+    theme_color,
+    banner_image
   ) {
     return fetch(`${config.API_ENDPOINT}/users/${username}`, {
       method: "PATCH",
@@ -89,7 +90,8 @@ const PortfolioApiService = {
         github_url,
         linkedin_url,
         email_address,
-        projects
+        theme_color,
+        banner_image
       })
     }).then(res => (!res.ok ? res.json().then(e => Promise.reject(e)) : res));
   }

@@ -2,7 +2,47 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-top: 50px;
+}
+
+.banner_mountains {
+    background: linear-gradient( rgba(0, 0, 0, 0.514), rgba(0, 0, 0, 0.418) ), url(/img/mountains.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 80px 0;
+}
+
+.banner_field {
+    background: linear-gradient( rgba(0, 0, 0, 0.459), rgba(0, 0, 0, 0.342) ), url(/img/field.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 80px 0;
+}
+
+
+.banner_code {
+    background: linear-gradient( rgba(0, 0, 0, 0.534), rgba(0, 0, 0, 0.445) ), url(/img/code.jpg);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    padding: 80px 0;
+}
+
+.full_name, .title {
+    color: white;
 }
 
 .bio {
@@ -20,10 +60,38 @@
     flex-direction: column;
     padding: 3%;
     align-items: center;
-    margin-bottom: 0px;
-    border: 1px solid;
-    width: 100%;
+    margin-bottom: 25px;
+    width: 90%;
+    border-radius: 5px;
+    border: 1px black solid;
+    background-color: rgba(224, 224, 224, 0.274);;
 }
+
+/* .project_section_black:nth-child(odd) {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+.project_section_black:nth-child(even) {
+    background-color: rgb(255, 255, 255);
+}
+
+
+.project_section_red:nth-child(odd) {
+    background-color: rgb(206, 120, 120);
+}
+
+.project_section_red:nth-child(even) {
+    background-color: rgb(202, 99, 99);
+}
+
+.project_section_blue:nth-child(odd) {
+    background-color: rgb(151, 183, 194);
+}
+
+.project_section_blue:nth-child(even) {
+    background-color: rgb(135, 173, 185);
+} */
 
 .project_description {
     text-align: center;
@@ -38,7 +106,39 @@
     margin-bottom: 0;
 }
 
-.project_link {
-    margin: 5px 0;
+.project_button {
+    width: 120px;
+    margin: 10px;
+    padding: 5px;
+    border: none;
+    border-radius: 2px;
 }
 
+.project_button_black {
+    background-color: rgb(36, 36, 36);
+}
+
+.project_button_red {
+    background-color: rgb(160, 32, 32);
+}
+
+.project_button_blue {
+    background-color: rgb(41, 103, 145);
+}
+
+.project_button_green {
+    background-color: rgb(34, 100, 34);
+}
+
+.project_link {
+    margin: 5px 0;
+    color: black;
+    font-size: 18px;
+    text-decoration: none;
+    color: white;
+}
+
+hr {
+    width: 1px;
+    color: black;
+}

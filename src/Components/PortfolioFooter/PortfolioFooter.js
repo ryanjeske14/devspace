@@ -3,6 +3,7 @@ import "./PortfolioFooter.css";
 
 export default class PortfolioFooter extends Component {
   render() {
+    const { theme_color } = this.props;
     return (
       <footer className="footer">
         <h3 className="contact_header">Contact</h3>{" "}
@@ -14,7 +15,10 @@ export default class PortfolioFooter extends Component {
               rel="noopener noreferrer"
               aria-label="github profile link"
             >
-              <i className="fab fa-github" aria-hidden="true" />
+              <i
+                className={`fab fa-github ${theme_color}`}
+                aria-hidden="true"
+              />
             </a>
             <a
               href={this.props.linkedin}
@@ -22,10 +26,16 @@ export default class PortfolioFooter extends Component {
               rel="noopener noreferrer"
               aria-label="linkedin profile link"
             >
-              <i className="fab fa-linkedin" aria-hidden="true" />
+              <i
+                className={`fab fa-linkedin ${theme_color}`}
+                aria-hidden="true"
+              />
             </a>
             <a href={`mailto:${this.props.email}`} aria-label="email_link">
-              <i className="far fa-envelope" aria-hidden="true" />
+              <i
+                className={`far fa-envelope ${theme_color}`}
+                aria-hidden="true"
+              />
             </a>
           </div>
         </div>
