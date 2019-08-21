@@ -10,6 +10,7 @@ export default class PortfolioPage extends Component {
       full_name: "",
       title: "",
       bio: "",
+      profile_picture: "",
       theme_color: "",
       banner_image: "",
       github_url: "",
@@ -26,6 +27,7 @@ export default class PortfolioPage extends Component {
         full_name: user.full_name,
         title: user.title,
         bio: user.bio,
+        profile_picture: user.profile_picture,
         theme_color: user.theme_color,
         banner_image: user.banner_image,
         github_url: user.github_url,
@@ -41,6 +43,7 @@ export default class PortfolioPage extends Component {
       full_name,
       title,
       bio,
+      profile_picture,
       theme_color,
       banner_image,
       github_url,
@@ -57,6 +60,10 @@ export default class PortfolioPage extends Component {
         </section>
         <h2 className="subsection_header">About Me</h2>
         <p className="bio">{bio}</p>
+        <div
+          className="profile_picture_div"
+          style={{ "background-image": `url(${profile_picture})` }}
+        />
         <h2 className="subsection_header">Projects</h2>
         {projects.map(project => (
           <section

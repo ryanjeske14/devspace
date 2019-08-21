@@ -1,8 +1,7 @@
 .footer {
     display: flex;
     flex-direction: column;
-    padding-bottom: 10px;
-    margin-top: 50px;
+    padding-bottom: 40px;
 }
 
 .contact_header {
@@ -17,11 +16,6 @@ footer p {
     font-size: 16px;
 }
 
-footer a {
-    text-decoration: none;
-    color: #3a3a3a;
-}
-
 .name:hover {
     color: rgb(190, 44, 0);
     cursor: pointer;
@@ -29,7 +23,7 @@ footer a {
 
 footer i {
     margin: 0 8px;
-    font-size: 25px;
+    font-size: 30px;
 }
 
 footer .black {
