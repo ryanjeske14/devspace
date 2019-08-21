@@ -11,6 +11,7 @@ export default class PortfolioPage extends Component {
       title: "",
       bio: "",
       theme_color: "",
+      banner_image: "",
       github_url: "",
       linkedin_url: "",
       email_address: "",
@@ -26,6 +27,7 @@ export default class PortfolioPage extends Component {
         title: user.title,
         bio: user.bio,
         theme_color: user.theme_color,
+        banner_image: user.banner_image,
         github_url: user.github_url,
         linkedin_url: user.linkedin_url,
         email_address: user.email_address,
@@ -39,6 +41,8 @@ export default class PortfolioPage extends Component {
       full_name,
       title,
       bio,
+      theme_color,
+      banner_image,
       github_url,
       linkedin_url,
       email_address,
@@ -47,12 +51,18 @@ export default class PortfolioPage extends Component {
 
     return (
       <section className="portfolio_section">
-        <h1>{full_name}</h1>
-        <h2 className="subsection_header">{title}</h2>
+        <section className={`banner_${banner_image}`}>
+          <h1 className="full_name">{full_name}</h1>
+          <h2 className="subsection_header title">{title}</h2>
+        </section>
+        <h2 className="subsection_header">About Me</h2>
         <p className="bio">{bio}</p>
         <h2 className="subsection_header">Projects</h2>
         {projects.map(project => (
-          <section className="project_section">
+          <section
+            key={project.id}
+            className={`project_section project_section_${theme_color}`}
+          >
             <h3>{project.name}</h3>
             <p className="project_description">{project.description}</p>
             <img
@@ -63,31 +73,36 @@ export default class PortfolioPage extends Component {
             <h4 className="built_with_header">Built With</h4>
             <ul>
               {project.skills.map(skill => (
-                <li>{skill.name}</li>
+                <li key={skill.id}>{skill.name}</li>
               ))}
             </ul>
-            <a
-              href={project.demo_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project_link"
-            >
-              Demo
-            </a>
-            <a
-              href={project.github_url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="project_link"
-            >
-              Code
-            </a>
+            <button className={`project_button project_button_${theme_color}`}>
+              <a
+                href={project.demo_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project_link"
+              >
+                Demo
+              </a>
+            </button>
+            <button className={`project_button project_button_${theme_color}`}>
+              <a
+                href={project.github_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project_link"
+              >
+                Code
+              </a>
+            </button>
           </section>
         ))}
         <PortfolioFooter
           github={github_url}
           linkedin={linkedin_url}
           email={email_address}
+          theme_color={theme_color}
         />
       </section>
     );

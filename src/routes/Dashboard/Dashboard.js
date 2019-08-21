@@ -15,10 +15,11 @@ export default class Dashboard extends Component {
       full_name: "",
       title: "",
       bio: "",
-      theme_color: "",
       github_url: "",
       linkedin_url: "",
       email_address: "",
+      theme_color: "",
+      banner_image: "",
       projects: [],
       fullNameValid: true,
       titleValid: true,
@@ -48,10 +49,11 @@ export default class Dashboard extends Component {
           full_name: user.full_name,
           title: user.title,
           bio: user.bio,
-          theme_color: user.theme_color,
           github_url: user.github_url,
           linkedin_url: user.linkedin_url,
           email_address: user.email_address,
+          theme_color: user.theme_color,
+          banner_image: user.banner_image,
           projects: user.projects
         });
       });
@@ -90,6 +92,14 @@ export default class Dashboard extends Component {
     this.setState({ email_address, successMessage: "" }, () =>
       this.validateEmail(email_address)
     );
+  }
+
+  updateColor(theme_color) {
+    this.setState({ theme_color });
+  }
+
+  updateBannerImage(banner_image) {
+    this.setState({ banner_image });
   }
 
   validateFullName(fieldValue) {
@@ -222,7 +232,9 @@ export default class Dashboard extends Component {
       bio,
       github_url,
       linkedin_url,
-      email_address
+      email_address,
+      theme_color,
+      banner_image
     } = this.state;
 
     PortfolioApiService.updateUserData(
@@ -232,7 +244,9 @@ export default class Dashboard extends Component {
       bio,
       github_url,
       linkedin_url,
-      email_address
+      email_address,
+      theme_color,
+      banner_image
     )
       .then(
         this.setState({
@@ -242,6 +256,8 @@ export default class Dashboard extends Component {
           github_url,
           linkedin_url,
           email_address,
+          theme_color,
+          banner_image,
           successMessage: "Profile Saved Successfully!"
         })
       )
@@ -260,6 +276,8 @@ export default class Dashboard extends Component {
       github_url,
       linkedin_url,
       email_address,
+      theme_color,
+      banner_image,
       projects
     } = this.state;
 
@@ -269,7 +287,11 @@ export default class Dashboard extends Component {
           <h1>My Dashboard</h1>
         </header>{" "}
         <button className="dashboard_button">
-          <Link target="_blank" to={`/portfolio/${user_name}`}>
+          <Link
+            target="_blank"
+            to={`/portfolio/${user_name}`}
+            className="button_link"
+          >
             View My Portfolio
           </Link>
         </button>
@@ -358,6 +380,57 @@ export default class Dashboard extends Component {
             message={this.state.validationMessages.email}
             id="emailError"
           />
+          <h2>Portfolio Theme Options</h2>
+          <label htmlFor="theme_color_select">Select Your Theme Color:</label>
+          <select
+            className="theme_color_select theme_select"
+            name="theme_color_select"
+            id="theme_color_select"
+            onChange={e => this.updateColor(e.target.value)}
+            value={theme_color}
+          >
+            <option className="theme_color_option" value="black">
+              Black
+            </option>
+            <option className="theme_color_option" value="red">
+              Red
+            </option>
+            <option className="theme_color_option" value="blue">
+              Blue
+            </option>
+            <option className="theme_color_option" value="green">
+              Green
+            </option>
+          </select>
+
+          <label htmlFor="banner_image_select">Select Your Banner Image:</label>
+          <label>
+            <input
+              type="radio"
+              value="mountains"
+              checked={banner_image === "mountains"}
+              onChange={e => this.updateBannerImage(e.target.value)}
+            />
+            <img src="./img/mountains.jpg" alt="mountains" />
+          </label>
+          <label>
+            <input
+              type="radio"
+              value="field"
+              checked={banner_image === "field"}
+              onChange={e => this.updateBannerImage(e.target.value)}
+            />
+            <img src="./img/field.jpg" alt="fields" />
+          </label>
+          <label>
+            <input
+              type="radio"
+              value="code"
+              checked={banner_image === "code"}
+              onChange={e => this.updateBannerImage(e.target.value)}
+            />
+            <img src="./img/code.jpg" alt="source code" />
+          </label>
 
           <button
             className="dashboard_button"
@@ -387,11 +460,20 @@ export default class Dashboard extends Component {
             ))}
           </ul>
           <button className="dashboard_button">
-            <Link className="add_project_link" to={`/add-project`}>
+            <Link className="button_link" to={`/add-project`}>
               Add New Project
             </Link>
           </button>
         </section>
+        <button className="dashboard_button">
+          <Link
+            target="_blank"
+            to={`/portfolio/${user_name}`}
+            className="button_link"
+          >
+            View My Portfolio
+          </Link>
+        </button>
       </section>
     );
   }

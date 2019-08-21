@@ -31,3 +31,19 @@ footer i {
     margin: 0 8px;
     font-size: 25px;
 }
+
+footer .black {
+    color: rgb(36, 36, 36)
+}
+
+footer .red {
+    color: rgb(160, 32, 32);
+}
+
+footer .blue {
+    color: rgb(41, 103, 145);
+}
+
+footer .green {
+    color: rgb(34, 100, 34);
+}
