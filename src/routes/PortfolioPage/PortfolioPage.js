@@ -55,7 +55,7 @@ export default class PortfolioPage extends Component {
     return (
       <section className="portfolio_section">
         <section className={`banner_${banner_image}`}>
-          <h1 className="full_name">{full_name}</h1>
+          <h1 className="name_header">{full_name}</h1>
           <h2 className="subsection_header title">{title}</h2>
         </section>
         <h2 className="subsection_header">About Me</h2>
