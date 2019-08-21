@@ -15,6 +15,7 @@ export default class Dashboard extends Component {
       full_name: "",
       title: "",
       bio: "",
+      profile_picture: "",
       github_url: "",
       linkedin_url: "",
       email_address: "",
@@ -24,6 +25,7 @@ export default class Dashboard extends Component {
       fullNameValid: true,
       titleValid: true,
       bioValid: true,
+      profilePictureValid: true,
       githubValid: true,
       linkedinValid: true,
       emailValid: true,
@@ -32,6 +34,7 @@ export default class Dashboard extends Component {
         fullName: "",
         title: "",
         bio: "",
+        profilePicture: "",
         github: "",
         linkedin: "",
         email: ""
@@ -49,6 +52,7 @@ export default class Dashboard extends Component {
           full_name: user.full_name,
           title: user.title,
           bio: user.bio,
+          profile_picture: user.profile_picture,
           github_url: user.github_url,
           linkedin_url: user.linkedin_url,
           email_address: user.email_address,
@@ -76,6 +80,12 @@ export default class Dashboard extends Component {
     this.setState({ bio, successMessage: "" }, () => this.validateBio(bio));
   }
 
+  updateProfilePicture(profile_picture) {
+    this.setState({ profile_picture, successMessage: "" }, () =>
+      this.validateProfilePicture(profile_picture)
+    );
+  }
+
   updateGitHub(github_url) {
     this.setState({ github_url, successMessage: "" }, () =>
       this.validateGitHub(github_url)
@@ -95,11 +105,11 @@ export default class Dashboard extends Component {
   }
 
   updateColor(theme_color) {
-    this.setState({ theme_color });
+    this.setState({ theme_color, successMessage: "" });
   }
 
   updateBannerImage(banner_image) {
-    this.setState({ banner_image });
+    this.setState({ banner_image, successMessage: "" });
   }
 
   validateFullName(fieldValue) {
@@ -151,6 +161,24 @@ export default class Dashboard extends Component {
       {
         validationMessages: fieldErrors,
         bioValid: !hasError
+      },
+      this.formValid
+    );
+  }
+
+  validateProfilePicture(fieldValue) {
+    const fieldErrors = { ...this.state.validationMessages };
+    let hasError = false;
+
+    fieldValue = fieldValue.trim();
+    if (!fieldValue.includes(".") || fieldValue.length < 3) {
+      fieldErrors.profilePicture = "Please provide a valid URL for your image";
+      hasError = true;
+    }
+    this.setState(
+      {
+        validationMessages: fieldErrors,
+        profilePictureValid: !hasError
       },
       this.formValid
     );
@@ -217,6 +245,7 @@ export default class Dashboard extends Component {
         this.state.fullNameValid &&
         this.state.titleValid &&
         this.state.bioValid &&
+        this.state.profilePictureValid &&
         this.state.githubValid &&
         this.state.linkedinValid &&
         this.state.emailValid
@@ -230,6 +259,7 @@ export default class Dashboard extends Component {
       full_name,
       title,
       bio,
+      profile_picture,
       github_url,
       linkedin_url,
       email_address,
@@ -242,6 +272,7 @@ export default class Dashboard extends Component {
       full_name,
       title,
       bio,
+      profile_picture,
       github_url,
       linkedin_url,
       email_address,
@@ -253,6 +284,7 @@ export default class Dashboard extends Component {
           full_name,
           title,
           bio,
+          profile_picture,
           github_url,
           linkedin_url,
           email_address,
@@ -273,6 +305,7 @@ export default class Dashboard extends Component {
       full_name,
       title,
       bio,
+      profile_picture,
       github_url,
       linkedin_url,
       email_address,
@@ -338,6 +371,20 @@ export default class Dashboard extends Component {
             message={this.state.validationMessages.bio}
             id="bioError"
           />
+          <label htmlFor="profile_picture">Profile Picture URL</label>
+          <input
+            className="dashboard_input"
+            type="text"
+            name="profile_picture"
+            id="profile_picture"
+            value={profile_picture}
+            onChange={e => this.updateProfilePicture(e.target.value)}
+          />
+          <ValidationError
+            hasError={!this.state.profilePictureValid}
+            message={this.state.validationMessages.profilePicture}
+            id="profilePictureError"
+          />
           <label htmlFor="github_url">GitHub URL</label>
           <input
             className="dashboard_input"
@@ -380,6 +427,18 @@ export default class Dashboard extends Component {
             message={this.state.validationMessages.email}
             id="emailError"
           />
+          <button
+            className="dashboard_button"
+            type="submit"
+            disabled={!this.state.formValid}
+          >
+            Save Changes
+          </button>
+          {this.state.successMessage ? (
+            <p className="success_message">{this.state.successMessage}</p>
+          ) : (
+            <></>
+          )}
           <h2>Portfolio Theme Options</h2>
           <label htmlFor="theme_color_select">Select Your Theme Color:</label>
           <select
@@ -446,7 +505,8 @@ export default class Dashboard extends Component {
           )}
         </form>
         <section className="dashboard_projects">
-          <h2>My Projects</h2>
+          <h2 className="projects_header">My Projects</h2>
+          <p>(click on a project to edit)</p>
           <ul className="projects_list">
             {projects.map(project => (
               <li className="dashboard_project" key={project.id}>

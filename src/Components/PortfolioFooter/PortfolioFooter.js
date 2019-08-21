@@ -6,7 +6,7 @@ export default class PortfolioFooter extends Component {
     const { theme_color } = this.props;
     return (
       <footer className="footer">
-        <h3 className="contact_header">Contact</h3>{" "}
+        <h2 className="contact_header">Contact</h2>{" "}
         <div className="footer_author">
           <div className="footer_social_media">
             <a

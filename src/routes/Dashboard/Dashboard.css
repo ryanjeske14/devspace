@@ -60,6 +60,11 @@ label {
     width: 80%
 }
 
+
+.projects_header {
+    margin-bottom: 5px;
+}
+
 .projects_list {
     list-style: none;
     padding: 0;
