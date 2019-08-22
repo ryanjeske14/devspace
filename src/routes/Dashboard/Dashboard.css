@@ -1,8 +1,8 @@
 .dashboard_section {
     text-align: center;
     padding: 5% 6%;
-    background-color: rgb(218, 218, 218);
-    padding-bottom: 60px;
+    background-color: rgb(247,247,247);
+    padding-bottom: 80px;
     font-size: 18px;
 }
 
@@ -14,14 +14,21 @@
 input, textarea, select  {
     font-family: Arial;
     font-size: 18px;
-    padding: 4px;
-    border: 1px solid black;
-    border-radius: 2px;
+    padding: 12px;
+    border: 1px solid #d6d6d6;
+    border-radius: 5px;
 }
 
 label {
     margin-bottom: 8px;
     font-size: 18px;
+    text-align: start;
+    padding-left: 3px;
+    font-size: 18px;
+}
+
+.theme_label {
+    text-align: center;
 }
 
 .dashboard_input {
@@ -30,18 +37,6 @@ label {
 
 #bio {
     height: 140px;
-}
-
-.dashboard_button {
-    margin: 10px auto;
-    width: 200px;
-    text-decoration: none;
-    font-size: 18px;
-    padding: 5px;
-    background-color: rgb(63, 63, 63);
-    color: white;
-    border: none;
-    border-radius: 2px;
 }
 
 .button_link {
@@ -53,6 +48,10 @@ label {
 .success_message {
     margin: 10px 0;
     font-weight: bold;
+}
+
+.about_me_header, .theme_header {
+    margin-top: 10px;
 }
 
 .theme_select {
@@ -71,12 +70,20 @@ label {
 }
 
 .dashboard_project {
-    margin: 10px 0;
+    margin: 15px 0;
 }
 
 .dashboard_project_name {
+    text-decoration: none;
     color: black;
+    font-size: 24px;
+    padding: 15px;
 }
+
+.dashboard_project_name:hover {
+    text-decoration: underline;
+}
+
 
 [type=radio] { 
     position: absolute;
@@ -88,13 +95,24 @@ label {
 [type=radio] + img {
     cursor: pointer;
     width: 300px;
-    height: 130px
+    height: 130px;
+    margin-top: 5px;
 }
 
 [type=radio]:checked + img {
-    outline: 3px solid red;
+    box-shadow: 0 0 3pt 2pt red;
 }
 
 [type=radio]:not(:checked) + img {
     filter: brightness(35%)
 }
+
+hr {
+    margin: 30px auto;
+    border: 0;
+    clear: both;
+    display: block;
+    width: 96%;               
+    background-color:rgb(158, 158, 158);
+    height: 2px;
+  }

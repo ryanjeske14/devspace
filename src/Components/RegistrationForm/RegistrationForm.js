@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Button, Input, Required } from "../Utils/Utils";
+import { Input, Required } from "../Utils/Utils";
 import AuthApiService from "../../services/auth-api-service";
 import "./RegistrationForm.css";
 
@@ -80,9 +80,9 @@ export default class RegistrationForm extends Component {
             aria-describedby="registrationError"
           />
         </div>
-        <Button className="registration_button" type="submit">
+        <button className="registration_button" type="submit">
           Register
-        </Button>
+        </button>
       </form>
     );
   }
