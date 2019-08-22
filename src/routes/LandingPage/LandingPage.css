@@ -20,18 +20,29 @@ h1 {
 
 .landing_section {
     min-height: 200px;
-    padding: 5% 6%;
+    padding: 2% 6%;
     background-color: rgb(247,247,247);
 }
 
-p {
+.landing_section p {
     margin: 0;
+    font-size: 18px
+}
+
+.get_started {
+    margin-top: 45px;
 }
 
 .get_started_link {
     text-decoration: none;
     color: white;
     font-size: 24px;
+}
+
+.far, .fas {
+    font-size: 100px;
+    color: #294F58;
+    margin-top: 30px;
 }
 
 @media screen and (min-width: 700px) {
@@ -41,6 +52,15 @@ p {
 
     .banner_img {
         max-width: 450px;
+    }
+
+    .far, .fas {
+        margin-top: 40px;
+        font-size: 120px;
+    }
+
+    .get_started {
+        margin-top: 35px;
     }
 }
 

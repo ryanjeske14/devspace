@@ -13,35 +13,32 @@ export default class LandingPage extends Component {
         <section className="landing_section">
           <h2>A portfolio builder for web developers</h2>
           <p>
-            Are you a web developer? Do you have projects or prior work
-            experience that you want to share? Devspace provides a quick and
-            easy-to-use platform for building your very own portfolio site where
-            you can tell your story, demo your work, and help you connect with
-            others.
+            Are you a web developer? &nbsp; Do you have projects or prior work
+            experience that you want to share? &nbsp; Devspace provides a quick
+            and easy-to-use platform for building your very own portfolio site
+            where you can tell your story, demo your work, and help you connect
+            with others.
           </p>
+          <i className="far fa-address-card" />
         </section>
 
         <section className="landing_section">
           <h2>Tell your story</h2>
           <p>
-            [<em>placeholder for screenshot</em>]
-          </p>
-          <p>
             Fill out some basic information about yourself, your background, and
             anything you want other developers to know about you.
           </p>
+          <i className="fas fa-book" />
         </section>
 
         <section className="landing_section">
           <h2>Demo your projects</h2>
           <p>
-            [<em>placeholder for screenshot</em>]
+            Devspace makes it easy to demo your projects. &nbsp; All you have to
+            do is fill out a few simple fields, select the technologies you
+            used, upload a screenshot of your app, and the rest is done for you!
           </p>
-          <p>
-            Devspace makes it easy to demo your projects. All you have to do is
-            fill out a few simple fields, select the technologies you used,
-            upload a screenshot of your app, and the rest is done for you!
-          </p>
+          <i className="far fa-folder-open" />
         </section>
 
         <section className="landing_section">
