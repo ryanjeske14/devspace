@@ -9,7 +9,7 @@ A full stack web app that allows web developers to easily create a basic portfol
 Registered users can build their own personal portfolio site. If a user chooses not to register, he or she can use the available guest account to play around in the app (see credentials below):
 
 ### Demo Account:
-Username: chucknorris
+Username: chucknorris  
 Password: Portfolio123#
 
 ## Demo:

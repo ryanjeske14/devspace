@@ -18,6 +18,10 @@ h1 {
     font-size: 40px;
 }
 
+.top_header {
+    font-size: 24px;
+}
+
 .landing_section {
     min-height: 200px;
     padding: 2% 6%;

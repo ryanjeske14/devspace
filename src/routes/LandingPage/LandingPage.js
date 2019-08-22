@@ -6,12 +6,12 @@ export default class LandingPage extends Component {
   render() {
     return (
       <section className="landing">
-        <header role="banner" className="banner">
+        <header className="banner">
           <img src="/img/hero.jpg" alt="hero_img" className="banner_img" />
         </header>
 
         <section className="landing_section">
-          <h2>A portfolio builder for web developers</h2>
+          <h1 className="top_header">A portfolio builder for web developers</h1>
           <p>
             Are you a web developer? &nbsp; Do you have projects or prior work
             experience that you want to share? &nbsp; Devspace provides a quick

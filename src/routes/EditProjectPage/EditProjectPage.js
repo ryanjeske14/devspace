@@ -271,7 +271,7 @@ export default class EditProjectPage extends Component {
 
     return (
       <section className="edit_project_section">
-        <header role="banner">
+        <header>
           <h1 className="add_form_header">Edit Project</h1>
         </header>{" "}
         <form className="add_project_form" onSubmit={this.handleSubmit}>
