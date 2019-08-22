@@ -116,3 +116,15 @@ hr {
     background-color:rgb(158, 158, 158);
     height: 2px;
   }
+
+  @media screen and (min-width: 700px) {
+      .dashboard_form {
+          width: 600px;
+          margin-left: auto;
+          margin-right: auto;
+      }
+    
+      hr {
+          width: 85%;
+      }
+   }

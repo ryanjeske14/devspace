@@ -9,8 +9,9 @@
     padding: 10%;
 }
 
-.banner_logo {
+.banner_img {
     width: 100%;
+    max-width: 350px;
 }
 
 h1 {
@@ -32,4 +33,14 @@ p {
     color: white;
     font-size: 24px;
 }
-  
+
+@media screen and (min-width: 700px) {
+    .banner {
+        padding: 6%;
+    }
+
+    .banner_img {
+        max-width: 450px;
+    }
+}
+

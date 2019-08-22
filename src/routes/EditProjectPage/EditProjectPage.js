@@ -247,8 +247,19 @@ export default class EditProjectPage extends Component {
       });
   };
 
+  handleDelete(e, id) {
+    e.preventDefault();
+    PortfolioApiService.deleteProject(id).catch(err => {
+      console.error(err);
+      this.setState({ successMessage: err.error.message });
+    });
+
+    this.props.history.push("/dashboard");
+  }
+
   render() {
     const {
+      id,
       name,
       description,
       skills,
@@ -259,7 +270,7 @@ export default class EditProjectPage extends Component {
     } = this.state;
 
     return (
-      <section className="add_project_section">
+      <section className="edit_project_section">
         <header role="banner">
           <h1 className="add_form_header">Edit Project</h1>
         </header>{" "}
@@ -368,6 +379,12 @@ export default class EditProjectPage extends Component {
             disabled={!this.state.formValid}
           >
             Save Project
+          </button>
+          <button
+            className="delete_button"
+            onClick={e => this.handleDelete(e, id)}
+          >
+            Delete Project
           </button>
           {this.state.successMessage ? (
             <p className="success_message">{this.state.successMessage}</p>

@@ -7,7 +7,7 @@ export default class LandingPage extends Component {
     return (
       <section className="landing">
         <header role="banner" className="banner">
-          <img src="/img/hero.jpg" alt="hero_img" className="banner_logo" />
+          <img src="/img/hero.jpg" alt="hero_img" className="banner_img" />
         </header>
 
         <section className="landing_section">

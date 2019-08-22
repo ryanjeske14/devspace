@@ -96,6 +96,16 @@ const PortfolioApiService = {
         banner_image
       })
     }).then(res => (!res.ok ? res.json().then(e => Promise.reject(e)) : res));
+  },
+
+  deleteProject(projectId) {
+    return fetch(`${config.API_ENDPOINT}/projects/${projectId}`, {
+      method: "DELETE",
+      headers: {
+        "content-type": "application/json",
+        authorization: `bearer ${TokenService.getAuthToken()}`
+      }
+    }).then(res => (!res.ok ? res.json().then(e => Promise.reject(e)) : res));
   }
 };
 
