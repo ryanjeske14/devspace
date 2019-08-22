@@ -26,6 +26,12 @@ button:hover {
   background-color: #48B68D;
 }
 
+button:disabled {
+  background-color: rgba(233, 233, 233, 0.705);
+  color: rgba(163, 163, 163, 0.76);
+  cursor: not-allowed;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

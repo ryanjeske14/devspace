@@ -37,7 +37,7 @@ export default class LoginForm extends Component {
           {error && <p className="red">{error}</p>}
         </div>
         <div className="user_name">
-          <label htmlFor="user_name">User name</label>
+          <label htmlFor="user_name">Username</label>
           <Input
             required
             name="user_name"
