@@ -23,18 +23,22 @@ export default class PortfolioPage extends Component {
   componentDidMount() {
     const { user_name } = this.props.match.params;
     PortfolioApiService.getPortfolioData(user_name).then(user => {
-      this.setState({
-        full_name: user.full_name,
-        title: user.title,
-        bio: user.bio,
-        profile_picture: user.profile_picture,
-        theme_color: user.theme_color,
-        banner_image: user.banner_image,
-        github_url: user.github_url,
-        linkedin_url: user.linkedin_url,
-        email_address: user.email_address,
-        projects: user.projects
-      });
+      this.setState(
+        {
+          full_name: user.full_name,
+          title: user.title,
+          bio: user.bio,
+          profile_picture: user.profile_picture,
+          theme_color: user.theme_color,
+          banner_image: user.banner_image,
+          github_url: user.github_url,
+          linkedin_url: user.linkedin_url,
+          email_address: user.email_address,
+          projects: user.projects
+        },
+        // dynamically update document title to be specific to user's portfolio
+        () => (document.title = `${user.full_name} Portfolio`)
+      );
     });
   }
 

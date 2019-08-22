@@ -1,16 +1,3 @@
-// import React, { Component } from "react";
-// //import TokenService from "../../services/token-service";
-
-// export default class EditProjectPage extends Component {
-//   render() {
-//     const currentUserId = TokenService.parseAuthToken().user_id;
-//     if (currentUserId != project.user_id) {
-//       return <h1>Unauthorized</h1>;
-//     }
-//     return <h1>Edit Project</h1>;
-//   }
-// }
-
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import AppContext from "../../AppContext";
@@ -51,6 +38,7 @@ export default class EditProjectPage extends Component {
   async componentDidMount() {
     const { project_id } = this.props.match.params;
 
+    // retrieves skills from DB to populate checkboxes on form
     await PortfolioApiService.getSkills().then(skillsList => {
       this.setState({ skillsList });
     });
@@ -198,6 +186,7 @@ export default class EditProjectPage extends Component {
     );
   }
 
+  // set form to valid if all input validations are passing
   formValid() {
     this.setState({
       formValid:
@@ -249,12 +238,12 @@ export default class EditProjectPage extends Component {
 
   handleDelete(e, id) {
     e.preventDefault();
-    PortfolioApiService.deleteProject(id).catch(err => {
-      console.error(err);
-      this.setState({ successMessage: err.error.message });
-    });
-
-    this.props.history.push("/dashboard");
+    PortfolioApiService.deleteProject(id)
+      .then(project => this.props.history.push("/dashboard"))
+      .catch(err => {
+        console.error(err);
+        this.setState({ successMessage: err.error.message });
+      });
   }
 
   render() {

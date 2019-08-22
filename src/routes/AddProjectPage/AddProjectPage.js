@@ -34,6 +34,7 @@ export default class AddProjectPage extends Component {
     };
   }
 
+  // retrieves skills from DB to populate checkboxes on form
   componentDidMount() {
     PortfolioApiService.getSkills().then(skillsList => {
       this.setState({ skillsList });
@@ -162,6 +163,7 @@ export default class AddProjectPage extends Component {
     );
   }
 
+  // set form to valid if all input validations are passing
   formValid() {
     this.setState({
       formValid:
@@ -191,9 +193,9 @@ export default class AddProjectPage extends Component {
       github_url,
       demo_url,
       image_url
-    ).catch(err => console.error(err));
-
-    this.props.history.push("/dashboard");
+    )
+      .then(project => this.props.history.push("/dashboard"))
+      .catch(err => console.error(err));
   };
 
   render() {

@@ -50,6 +50,7 @@ export default class Header extends Component {
             <img src="/img/logo2.png" alt="logo" />
           </Link>
         </div>
+        {/* dynamically render header based on whether user is logged in */}
         {this.context.loggedIn
           ? this.renderLogoutLink()
           : this.renderLoginLink()}
