@@ -6,9 +6,8 @@ export default class LandingPage extends Component {
   render() {
     return (
       <section className="landing">
-        <header role="banner">
-          <h1>Devspace</h1>
-          <h2>let your work be seen</h2>
+        <header role="banner" className="banner">
+          <img src="/img/hero.jpg" alt="hero_img" className="banner_logo" />
         </header>
 
         <section className="landing_section">
@@ -51,40 +50,12 @@ export default class LandingPage extends Component {
             <p>Register below to start making your portfolio site today!</p>
            */}
           <section className="get_started_section">
-            <h2 className="get_started">
-              <Link to="/dashboard">GET STARTED</Link>
-            </h2>
+            <button className="get_started">
+              <Link to="/dashboard" className="get_started_link">
+                GET STARTED
+              </Link>
+            </button>
           </section>
-          {/* <form class="signup-form">
-            <div>
-              <label for="full_name">Full name</label>
-              <input
-                type="text"
-                name="full_name"
-                id="full_name"
-                placeholder="Full Name"
-              />
-            </div>
-            <div>
-              <label for="user_name">User name</label>
-              <input
-                type="text"
-                name="user_name"
-                id="user_name"
-                placeholder="User Name"
-              />
-            </div>
-            <div>
-              <label for="password">Password</label>
-              <input
-                type="password"
-                name="password"
-                id="password"
-                placeholder="Password"
-              />
-            </div>
-            <button type="submit">Sign Up</button>
-          </form> */}
         </section>
       </section>
     );

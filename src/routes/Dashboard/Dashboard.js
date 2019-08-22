@@ -316,7 +316,7 @@ export default class Dashboard extends Component {
 
     return (
       <section className="dashboard_section">
-        <header role="banner">
+        <header>
           <h1>My Dashboard</h1>
         </header>{" "}
         <button className="dashboard_button">
@@ -328,8 +328,9 @@ export default class Dashboard extends Component {
             View My Portfolio
           </Link>
         </button>
+        <hr />
         <form className="dashboard_form" onSubmit={this.handleSubmit}>
-          <h2>About Me</h2>
+          <h2 className="about_me_header">About Me</h2>
           <label htmlFor="full_name">Full Name</label>
           <input
             className="dashboard_input"
@@ -338,6 +339,7 @@ export default class Dashboard extends Component {
             id="full_name"
             value={full_name}
             onChange={e => this.updateFullName(e.target.value)}
+            placeholder="e.g., John Doe"
           />
           <ValidationError
             hasError={!this.state.fullNameValid}
@@ -352,6 +354,7 @@ export default class Dashboard extends Component {
             id="title"
             value={title}
             onChange={e => this.updateTitle(e.target.value)}
+            placeholder="e.g., Full Stack Engineer"
           />
           <ValidationError
             hasError={!this.state.titleValid}
@@ -365,6 +368,7 @@ export default class Dashboard extends Component {
             id="bio"
             value={bio}
             onChange={e => this.updateBio(e.target.value)}
+            placeholder="Tell us a little bit about yourself!"
           />
           <ValidationError
             hasError={!this.state.bioValid}
@@ -379,6 +383,7 @@ export default class Dashboard extends Component {
             id="profile_picture"
             value={profile_picture}
             onChange={e => this.updateProfilePicture(e.target.value)}
+            placeholder="Paste a link to your profile picture!"
           />
           <ValidationError
             hasError={!this.state.profilePictureValid}
@@ -391,7 +396,7 @@ export default class Dashboard extends Component {
             type="text"
             name="github_url"
             id="github_url"
-            value={github_url}
+            value={github_url || "https://github.com/"}
             onChange={e => this.updateGitHub(e.target.value)}
           />
           <ValidationError
@@ -405,7 +410,7 @@ export default class Dashboard extends Component {
             type="text"
             name="linkedin_url"
             id="linkedin_url"
-            value={linkedin_url}
+            value={linkedin_url || "https://www.linkedin.com/in/"}
             onChange={e => this.updateLinkedIn(e.target.value)}
           />
           <ValidationError
@@ -421,6 +426,7 @@ export default class Dashboard extends Component {
             id="email_address"
             value={email_address}
             onChange={e => this.updateEmail(e.target.value)}
+            placeholder="e.g., john.doe@doogle.com"
           />
           <ValidationError
             hasError={!this.state.emailValid}
@@ -439,8 +445,11 @@ export default class Dashboard extends Component {
           ) : (
             <></>
           )}
-          <h2>Portfolio Theme Options</h2>
-          <label htmlFor="theme_color_select">Select Your Theme Color:</label>
+          <hr />
+          <h2 className="theme_header">Portfolio Theme Options</h2>
+          <label className="theme_label" htmlFor="theme_color_select">
+            Select Your Theme Color:
+          </label>
           <select
             className="theme_color_select theme_select"
             name="theme_color_select"
@@ -462,8 +471,10 @@ export default class Dashboard extends Component {
             </option>
           </select>
 
-          <label htmlFor="banner_image_select">Select Your Banner Image:</label>
-          <label>
+          <label className="theme_label" htmlFor="banner_image_select">
+            Select Your Banner Image:
+          </label>
+          <label className="theme_label">
             <input
               type="radio"
               value="mountains"
@@ -472,7 +483,7 @@ export default class Dashboard extends Component {
             />
             <img src="./img/mountains.jpg" alt="mountains" />
           </label>
-          <label>
+          <label className="theme_label">
             <input
               type="radio"
               value="field"
@@ -481,7 +492,7 @@ export default class Dashboard extends Component {
             />
             <img src="./img/field.jpg" alt="fields" />
           </label>
-          <label>
+          <label className="theme_label">
             <input
               type="radio"
               value="code"
@@ -504,9 +515,10 @@ export default class Dashboard extends Component {
             <></>
           )}
         </form>
+        <hr />
         <section className="dashboard_projects">
           <h2 className="projects_header">My Projects</h2>
-          <p>(click on a project to edit)</p>
+          {projects.length === 0 ? <></> : <p>(click on a project to edit)</p>}
           <ul className="projects_list">
             {projects.map(project => (
               <li className="dashboard_project" key={project.id}>
@@ -519,12 +531,13 @@ export default class Dashboard extends Component {
               </li>
             ))}
           </ul>
-          <button className="dashboard_button">
+          <button className="dashboard_button add_project_button">
             <Link className="button_link" to={`/add-project`}>
               Add New Project
             </Link>
           </button>
         </section>
+        <hr />
         <button className="dashboard_button">
           <Link
             target="_blank"

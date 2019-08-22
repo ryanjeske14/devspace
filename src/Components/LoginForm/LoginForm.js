@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import AuthApiService from "../../services/auth-api-service";
-import { Button, Input } from "../Utils/Utils";
+import { Input } from "../Utils/Utils";
 import "./LoginForm.css";
 
 export default class LoginForm extends Component {
@@ -59,9 +59,9 @@ export default class LoginForm extends Component {
             aria-describedby="loginError"
           />
         </div>
-        <Button className="login_button" type="submit">
+        <button className="login_button" type="submit">
           Login
-        </Button>
+        </button>
       </form>
     );
   }

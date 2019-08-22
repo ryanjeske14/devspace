@@ -2,6 +2,17 @@
     text-align: center;
 }
 
+.banner {
+    display: flex;
+    background-color: #48B68D;
+    justify-content: center;
+    padding: 10%;
+}
+
+.banner_logo {
+    width: 100%;
+}
+
 h1 {
     font-size: 40px;
 }
@@ -9,13 +20,16 @@ h1 {
 .landing_section {
     min-height: 200px;
     padding: 5% 6%;
-    background-color: #bbb;
-}
-
-.landing_section:nth-child(even) {
-    background-color: #ddd;
+    background-color: rgb(247,247,247);
 }
 
 p {
     margin: 0;
 }
+
+.get_started_link {
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+}
+  

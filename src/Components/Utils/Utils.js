@@ -7,7 +7,11 @@ export function NiceDate({ date, format = "Do MMMM YYYY" }) {
 }
 
 export function Hyph() {
-  return <span className="Hyph">{" - "}</span>;
+  return (
+    <span className="Hyph">
+      <img src="/img/logo.png" alt="icon" className="hyph_icon" />
+    </span>
+  );
 }
 
 export function Button({ className, ...props }) {

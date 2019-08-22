@@ -264,7 +264,9 @@ export default class EditProjectPage extends Component {
           <h1 className="add_form_header">Edit Project</h1>
         </header>{" "}
         <form className="add_project_form" onSubmit={this.handleSubmit}>
-          <h2>Update your project using the fields below:</h2>
+          <h2 className="form_instructions">
+            Update your project using the fields below:
+          </h2>
           <label htmlFor="name">Project Name</label>
           <input
             className="form_input text_input"
@@ -294,7 +296,7 @@ export default class EditProjectPage extends Component {
             message={this.state.validationMessages.description}
             id="descriptionError"
           />
-          <fieldset className="form_input">
+          <fieldset className="form_input skills_section">
             <legend>Technologies Used</legend>
             <div className="checkbox_group">
               {skillsList.map(skill => (
@@ -361,7 +363,7 @@ export default class EditProjectPage extends Component {
           />
 
           <button
-            className="form_button button"
+            className="form_button button save_project_button"
             type="submit"
             disabled={!this.state.formValid}
           >

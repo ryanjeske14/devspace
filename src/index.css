@@ -6,8 +6,24 @@ body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "Open Sans",
-  sans-serif; 
+  font-family: 'Lato', sans-serif;
+}
+
+button {
+  background-color: #294F58;
+  margin: 10px auto;
+  width: 250px;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 10px;
+  color: white;
+  border: none;
+  border-radius: 2px;
+  transition: all 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #48B68D;
 }
 
 code {

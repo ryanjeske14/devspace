@@ -58,19 +58,21 @@ export default class PortfolioPage extends Component {
           <h1 className="name_header">{full_name}</h1>
           <h2 className="subsection_header title">{title}</h2>
         </section>
-        <h2 className="subsection_header">About Me</h2>
+        <h2 className="subsection_header about_header">ABOUT ME</h2>
         <p className="bio">{bio}</p>
         <div
           className="profile_picture_div"
-          style={{ "background-image": `url(${profile_picture})` }}
+          style={{ backgroundImage: `url(${profile_picture})` }}
         />
-        <h2 className="subsection_header">Projects</h2>
+        <h2 className="subsection_header portfolio_projects_header">
+          PROJECTS
+        </h2>
         {projects.map(project => (
           <section
             key={project.id}
             className={`project_section project_section_${theme_color}`}
           >
-            <h3>{project.name}</h3>
+            <h3 className="project_name">{project.name}</h3>
             <p className="project_description">{project.description}</p>
             <img
               className="project_image"
@@ -78,31 +80,39 @@ export default class PortfolioPage extends Component {
               alt="project_screenshot"
             />
             <h4 className="built_with_header">Built With</h4>
-            <ul>
+            <ul className="skills_list">
               {project.skills.map(skill => (
-                <li key={skill.id}>{skill.name}</li>
+                <li key={skill.id} className="project_skill">
+                  {skill.name}
+                </li>
               ))}
             </ul>
-            <button className={`project_button project_button_${theme_color}`}>
-              <a
-                href={project.demo_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="project_link"
+            <section className="project_button_section">
+              <button
+                className={`project_button project_button_${theme_color}`}
               >
-                Demo
-              </a>
-            </button>
-            <button className={`project_button project_button_${theme_color}`}>
-              <a
-                href={project.github_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="project_link"
+                <a
+                  href={project.demo_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project_link"
+                >
+                  Demo
+                </a>
+              </button>
+              <button
+                className={`project_button project_button_${theme_color}`}
               >
-                Code
-              </a>
-            </button>
+                <a
+                  href={project.github_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="project_link"
+                >
+                  Code
+                </a>
+              </button>
+            </section>
           </section>
         ))}
         <PortfolioFooter

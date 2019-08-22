@@ -46,7 +46,9 @@ export default class Header extends Component {
     return (
       <nav className="Header">
         <div className="logo">
-          <Link to={destination}>Home</Link>
+          <Link to={destination}>
+            <img src="/img/logo2.png" alt="logo" />
+          </Link>
         </div>
         {this.context.loggedIn
           ? this.renderLogoutLink()

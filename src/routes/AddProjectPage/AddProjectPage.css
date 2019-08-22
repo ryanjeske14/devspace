@@ -1,6 +1,17 @@
+.add_project_section {
+    background-color: rgb(247,247,247);
+}
+
 .add_form_header {
     text-align: center;
-    margin-top: 60px;
+    padding-top: 40px;
+    margin-top: 0;
+    font-size: 30px;
+}
+
+.form_instructions {
+    font-size: 20px;
+    margin: 0 0 30px 0;
 }
 
 .add_project_form {
@@ -10,13 +21,21 @@
 }
 
 .form_input {
-    margin: 0 0 20px; 
+    margin: 0 0 10px; 
 }
 
 .text_input {
     padding-left: 5px;
 }
 
+legend {
+    font-size: 17px;
+    margin-bottom: 5px;
+}
+
+.skills_section {
+    margin-bottom: 24px;
+}
 .checkbox_group {
     display: flex;
     flex-wrap: wrap;
@@ -34,14 +53,17 @@
     text-align: center;
 }
 
-.button {
-    width: 250px;
-    margin: 10px auto;
+.save_project_button {
+    margin-top: 20px;
+}
+
+.back_button {
+    margin-top: 25px;
 }
 
 .back_link {
     text-decoration: none;
-    color: black;
+    color: white;
 }
 
 
